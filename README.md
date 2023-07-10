@@ -20,7 +20,6 @@ python run_training.py --logs_dir='PATH_TO_LOGS' --attention_type='ssa' --start=
 
 For more arguments please check the [run_training.py](https://github.com/gargsid/CrossShapeNet/blob/main/run_training.py).
 
-Here:
 - `logs_dir`: Path to the folder that will store the trained model and logs. Folder will be created if not already present
 - `attention_type`: 'ssa' for self-attention and 'csa' for cross-attention
 - `start`: starting index in the range of categories for which we want to run the training. Please check [this](https://github.com/gargsid/CrossShapeNet/blob/988c1c480e1b5fb221b0521757fa00244dde3731/run_training.py#L7). 
@@ -38,7 +37,6 @@ To generate the precomputed graphs use
 
 `python run_save_knn.py --ssa_logs_dir=PATH_TO_LOGS_DIR --n_heads=ATTENTION_HEADS --batch_size=4 --num_workers=3 --start=0 --end=16 --job`
 
-Here:
 - `ssa_logs_dir`: Name of the directory (excluding the part-name) where self-attention trained models are saved
 - `n_heads`: number of self-attention heads used in the training
 
