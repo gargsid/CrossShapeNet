@@ -15,13 +15,14 @@ First, the architecture is trained with conventional self-attention to generate 
 To run the training for single-shape (eg Bed, Bottle, Chair, ....), use the following command
 
 ```
-python run_training.py --logs_dir='PATH_TO_LOGS' --attention_type='ssa' --start=PART_INDEX --end=PART_INDEX --n_heads=1 --batch_size=4 --lr=0.001 --cmd
+python run_training.py --logs_dir='PATH_TO_LOGS' --attention_type='ssa' --start=PART_INDEX --end=PART_INDEX --n_heads=ATTENTION_HEADS --batch_size=4 --lr=0.001 --cmd
 ```
 
 For more arguments please check the [run_training.py](https://github.com/gargsid/CrossShapeNet/blob/main/run_training.py).
 
 - `logs_dir`: Path to the folder that will store the trained model and logs. Folder will be created if not already present
 - `attention_type`: 'ssa' for self-attention and 'csa' for cross-attention
+- `n_heads`: number of self-attention heads used in the training
 - `start`: starting index in the range of categories for which we want to run the training. Please check [this](https://github.com/gargsid/CrossShapeNet/blob/988c1c480e1b5fb221b0521757fa00244dde3731/run_training.py#L7). 
 - `end`: ending inde in the range of categories for which we want to run the training. So start=0 and end=0 will the run the training for Bed 
 - `cmd`: initiating it will run the training on console
@@ -48,7 +49,15 @@ The final graphs will be saved in the folder: `ssa_logs_dir/knn_graphs/`
 
 ### Cross-Shape Attention 
 
+After running the self-attention training and generating the KNN graphs, we will train the network with cross-shape attention. We will also inialize our weights with the pretrained self-attention layers because that led to more stable training. 
 
+```
+python run_training.py --logs_dir='PATH_TO_LOGS'  --ssa_logs_dir='PATH_TO_SSA_LOGS' --attention_type='csa' --start=PART_INDEX --end=PART_INDEX --n_heads=ATTENTION_HEADS --batch_size=4 --lr=0.001 --start=0 --end=16 --job
+```
+- `logs_dir`: Path to the folder that will store the trained model and logs. Folder will be created if not already present
+- `n_heads`: number of self-attention heads used in the training
+- `ssa_logs_dir`: Path to the folder that saved the self-attention models with same number of attention heads. 
+- `attention_type`: 'csa' for cross-attention
 
 ### Result
 
