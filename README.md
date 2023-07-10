@@ -2,6 +2,8 @@
 
 This repository contains the implementation of Cross-Shape Attention on top of the point-cloud features extracted from MID-FC architecture that led to state-of-the-art results on the PartNet Semantic Shape Segmentation benchmark. Please checkout the following links for details on our work. 
 
+**Cross-Shape Attention for Part Segmentation of 3D Point Clouds | [Project Page](https://marios2019.github.io/CSN/) | [Paper](https://arxiv.org/abs/2003.09053)**
+
 ## Extracting PartNet features
 
 To extract the features from the MID-Net (Octree based HRNet) architecture, first setup the Tensorflow implementation of the original O-CNN repo from [here](https://github.com/Microsoft/O-CNN). Specifically see [Installation](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md) and set up [Octree](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md) and [Tensorflow code](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md)
@@ -63,4 +65,3 @@ Similar to graph construction, this will run the training for all shapes simulta
 
 ### Results
 
-### Acknowledgements
