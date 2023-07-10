@@ -68,7 +68,7 @@ Similar to graph construction, this will run the training for all shapes simulta
 <p align="center"><img src="https://github.com/gargsid/CrossShapeNet/blob/main/assets/midfc_results.png" width="100%"></p>
 
 ### Citation
-
+Please also consider citing the corresponding papers.
 ```
 @article{CSN:2023,
   author  = {Marios Loizou and Siddhant Garg and Dmitry Petrov and Melinos Averkiou and Evangelos Kalogerakis},
