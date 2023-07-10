@@ -65,3 +65,15 @@ Similar to graph construction, this will run the training for all shapes simulta
 
 ### Results
 
+### Citation
+
+```
+@article{CSN:2023,
+  author  = {Marios Loizou and Siddhant Garg and Dmitry Petrov and Melinos Averkiou and Evangelos Kalogerakis},
+  title   = {{Cross-Shape Attention for Part Segmentation of 3D Point Clouds}},
+  journal = {Computer Graphics Forum (Proc. SGP)},
+  year    = {2023},
+  volume  = {42},
+  issue   = {5}
+}
+```
