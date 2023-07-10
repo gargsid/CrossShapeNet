@@ -30,10 +30,6 @@ parser.add_argument('--testing', action='store_true')
 parser.add_argument('--weight_decay', type=float, default=0.0005)
 parser.add_argument('--lr', type=float, default=0.001)
 
-parser.add_argument('--partname', type=str, default='Bed')
-parser.add_argument('--train_iters', type=int, default=3000)
-parser.add_argument('--num_classes', type=int, default=15)
-
 parser.add_argument('--attention_type', type=str, default='ssa')
 parser.add_argument('--K', type=int, default=1)
 
