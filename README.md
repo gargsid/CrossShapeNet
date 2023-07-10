@@ -28,7 +28,7 @@ Here:
 - `cmd`: initiating it will run the training on console
 To submit the training to a GPU, please modify [these](https://github.com/gargsid/CrossShapeNet/blob/988c1c480e1b5fb221b0521757fa00244dde3731/run_training.py#L112C14-L125) lines according to your system configurations and replace `--cmd` with `--job` argument. 
 
-***To submit jobs for all the shapes simultaneously use*** `start=0` and `end=16` with `--job` flag. 
+**To submit jobs for all the shapes simultaneously use** `start=0` and `end=16` with `--job` flag. 
 
 ### Generating KNN graph 
 
