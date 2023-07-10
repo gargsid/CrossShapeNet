@@ -71,14 +71,9 @@ for k in range(0, len(names)):
       logs_dir = os.path.join(logs_base_dir, f'{name}')
 
     else: # csa
-      # logs_base_dir = f'logs/{args.attention_type}_n_heads_{args.n_heads}_K_{args.K}'
       logs_base_dir = f'logs/sgd_{args.attention_type}_n_heads_{args.n_heads}_K_{args.K}/run_{args.run}'
-      # logs_base_dir = f'logs/adam_{args.attention_type}_n_heads_{args.n_heads}_K_{args.K}'
       logs_dir = os.path.join(logs_base_dir, f'{name}')
-
-      ssa_att = args.attention_type 
-      ssa_att = ssa_att.replace('csa', 'ssa')
-      ssa_logs_dir = f'logs/{ssa_att}_n_heads_{args.n_heads}/run_1/{name}'
+      ssa_logs_dir = os.path.join(args.ssa_logs_dir, f'{name}')
       
     cmds = [
         script,
