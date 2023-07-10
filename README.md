@@ -15,7 +15,7 @@ First, the architecture is trained with conventional self-attention to generate 
 To run the training for single-shape (eg Bed, Bottle, Chair, ....), use the following command
 
 ```
-python run_training.py --logs_dir='PATH_TO_LOGS' --attention_type='ssa' --start=PART_INDEX --end=PART_INDEX --n_heads=ATTENTION_HEADS --batch_size=4 --lr=0.001 --cmd
+python run_training.py --logs_dir='PATH_TO_LOGS' --attention_type='ssa' --start=PART_INDEX --end=PART_INDEX --n_heads=ATTENTION_HEADS --batch_size=4 --lr=0.001 --cmd --num_workers=3
 ```
 
 For more arguments please check the [run_training.py](https://github.com/gargsid/CrossShapeNet/blob/main/run_training.py).
@@ -52,13 +52,15 @@ The final graphs will be saved in the folder: `ssa_logs_dir/knn_graphs/`
 After running the self-attention training and generating the KNN graphs, we will train the network with cross-shape attention. We will also inialize our weights with the pretrained self-attention layers because that led to more stable training. 
 
 ```
-python run_training.py --logs_dir='PATH_TO_LOGS'  --ssa_logs_dir='PATH_TO_SSA_LOGS' --attention_type='csa' --start=PART_INDEX --end=PART_INDEX --n_heads=ATTENTION_HEADS --batch_size=4 --lr=0.001 --start=0 --end=16 --job
+python run_training.py --logs_dir='PATH_TO_LOGS'  --ssa_logs_dir='PATH_TO_SSA_LOGS' --attention_type='csa' --start=PART_INDEX --end=PART_INDEX --n_heads=ATTENTION_HEADS --batch_size=4 --num_workers=3 --lr=0.001 --start=0 --end=16 --job
 ```
 - `logs_dir`: Path to the folder that will store the trained model and logs. Folder will be created if not already present
 - `n_heads`: number of self-attention heads used in the training
 - `ssa_logs_dir`: Path to the folder that saved the self-attention models with same number of attention heads. 
-- `attention_type`: 'csa' for cross-attention
+- `attention_type`: 'csa' for cross-attention 
 
-### Result
+Similar to graph construction, this will run the training for all shapes simultaneously. To run the construction on console replace `--job` with `--cmd` and change `--start` and `--end` flags according to your requirements. 
+
+### Results
 
 ### Acknowledgements
