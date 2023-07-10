@@ -65,7 +65,7 @@ Similar to graph construction, this will run the training for all shapes simulta
 
 ### Results
 
-[](assets/mid_fc_results.pdf)
+[](https://github.com/gargsid/CrossShapeNet/tree/main/assets)
 
 ### Citation
 
