@@ -63,11 +63,11 @@ python run_training.py --logs_dir='PATH_TO_LOGS'  --ssa_logs_dir='PATH_TO_SSA_LO
 
 Similar to graph construction, this will run the training for all shapes simultaneously. To run the construction on console replace `--job` with `--cmd` and change `--start` and `--end` flags according to your requirements. 
 
-### Results
+## Results
 
 <p align="center"><img src="https://github.com/gargsid/CrossShapeNet/blob/main/assets/midfc_results.png" width="100%"></p>
 
-### Citation
+## Citation
 Please also consider citing the corresponding papers.
 ```
 @article{CSN:2023,
