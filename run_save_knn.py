@@ -30,10 +30,6 @@ parser.add_argument('--testing', action='store_true')
 parser.add_argument('--weight_decay', type=float, default=0.0005)
 parser.add_argument('--lr', type=float, default=0.001)
 
-parser.add_argument('--partname', type=str, default='Bed')
-parser.add_argument('--train_iters', type=int, default=3000)
-parser.add_argument('--num_classes', type=int, default=15)
-
 parser.add_argument('--attention_type', type=str, default='ssa')
 parser.add_argument('--K', type=int, default=10)
 
@@ -70,9 +66,7 @@ for k in range(0, len(names)):
         f'--batch_size={args.batch_size}',
         f'--num_classes={num_classes}',
     ]
-    if 'csa' in script:
-      cmds += [f'--K={args.K}', f'--ssa_logs_dir={ssa_logs_dir}']
-
+    
     if args.testing:
         cmds += [f'--testing']
 
