@@ -6,7 +6,24 @@ This repository contains the implementation of Cross-Shape Attention on top of t
 
 ## Extracting PartNet features from MID-FC
 
-To extract the features from the MID-Net (Octree based HRNet) architecture, first setup the Tensorflow implementation of the original O-CNN repo from [here](https://github.com/Microsoft/O-CNN). Specifically see [Installation](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md) and set up [Octree](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md) and [Tensorflow code](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md)
+To extract the features from the MID-Net (Octree based HRNet) architecture, first setup the Tensorflow implementation of the original O-CNN repo from [here](https://github.com/Microsoft/O-CNN). Specifically see [Installation](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md) and set up [Octree](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md) and [Tensorflow code](https://github.com/microsoft/O-CNN/blob/master/docs/installation.md). Please also set up the PartNet dataset following [this](https://github.com/microsoft/O-CNN/blob/master/docs/segmentation.md#shape-segmentation-on-partnet-with-tensorflow) and follow the steps 1 and 2 for setting up.
+
+First copy the files from `ocnn_extraction` and paste (replace) them in the `O-CNN/tensorflow/script/` folder. 
+
+We extracted the dense numpy features from the first fully-connected layer of the MID-FC HRNet network and save them on the disk. We also saved the corresponding point-clouds, point labels as well as logits from the final MID-FC layer. 
+
+To extract the features from the training data, use
+
+```
+cd O-CNN/tensorflow/script/
+python run_seg_partnet_test_cmd.py --phase=train --input_path=PATH_TO_TRAIN_TFRECORDS --logs_dir=PATH_TO_TRAIN_FEATURES_DIR 
+
+# For testing
+python run_seg_partnet_test_cmd.py --phase=test --input_path=PATH_TO_TEST_TFRECORDS --logs_dir=PATH_TO_TEST_FEATURES_DIR 
+```
+
+- `PATH_TO_TRAIN_TFRECORDS/PATH_TO_TEST_TFRECORDS`: Path to the level-3 tfrecords generated using [this](https://github.com/microsoft/O-CNN/blob/master/docs/segmentation.md#shape-segmentation-on-partnet-with-tensorflow).
+- `logs_dir`: Directory path where all the features will be stored in subdirs fc_1, labels, preds, pts
 
 ## Training CrossShapeNet
 
