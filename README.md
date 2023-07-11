@@ -93,7 +93,7 @@ Similar to graph construction, this will run the training for all shapes simulta
 
 ## Running Pretrained Model
 
-Please download the pretrained models from [here]() (Link coming soon). Here N_HEADS=8 and K=4. Store the directory called `pretrained_models` in some folder (let's say LOGS). `pretrained_models` folder containes the CSA trained models as well as precomputed graphs. (But it will be better to generate the graphs again for your dataset.)
+Please download the pretrained models from [here](https://drive.google.com/file/d/1I71Yv3zS0DP75FwaM8l3ahNUia98f4mk/view?usp=sharing). Here N_HEADS=8 and K=4. Store the directory called `pretrained_models` in some folder (let's say LOGS). `pretrained_models` folder containes the CSA trained models as well as precomputed graphs. (But it will be better to generate the graphs again for your dataset.)
 
 Now to run the predictions, use
 
