@@ -27,6 +27,14 @@ python run_seg_partnet_test_cmd.py --phase=test --input_path=PATH_TO_TEST_TFRECO
 
 ## Running Pretrained Model
 
+Please download the pretrained models from [here]() (Link coming soon) and store the directory called `pretrained_models` in some folder (let's say LOGS). `pretrained_models` folder containes the CSA trained models as well as precomputed graphs. (But it will be better to generate the graphs again for your dataset.)
+
+Now to run the predictions, use
+
+```
+python run_csa_pred.py --start=0 --end=0
+```
+
 ## Training CrossShapeNet
 
 ### Self-Shape Attention 
@@ -81,6 +89,21 @@ python run_training.py --logs_dir='PATH_TO_LOGS'  --ssa_logs_dir='PATH_TO_SSA_LO
 - `attention_type`: 'csa' for cross-attention 
 
 Similar to graph construction, this will run the training for all shapes simultaneously. To run the construction on console replace `--job` with `--cmd` and change `--start` and `--end` flags according to your requirements. 
+
+
+## Running Pretrained Model
+
+Please download the pretrained models from [here]() (Link coming soon). Here N_HEADS=8 and K=4. Store the directory called `pretrained_models` in some folder (let's say LOGS). `pretrained_models` folder containes the CSA trained models as well as precomputed graphs. (But it will be better to generate the graphs again for your dataset.)
+
+Now to run the predictions, use
+
+```
+python run_csa_pred.py --logs_dir=LOGS --start=0 --end=16
+```
+
+- `--logs_dir`: Path to the folder that contains `pretrained_models` directory
+
+The results will be stored in the `logs_dir/pretrained_models/run_1/PARTNAME/part_IoU_summaries.csv`, where `PARTNAME` is individual shape category. 
 
 ## Results
 
