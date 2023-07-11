@@ -25,6 +25,8 @@ python run_seg_partnet_test_cmd.py --phase=test --input_path=PATH_TO_TEST_TFRECO
 - `PATH_TO_TRAIN_TFRECORDS/PATH_TO_TEST_TFRECORDS`: Path to the level-3 tfrecords generated using [this](https://github.com/microsoft/O-CNN/blob/master/docs/segmentation.md#shape-segmentation-on-partnet-with-tensorflow).
 - `logs_dir`: Directory path where all the features will be stored in subdirs fc_1, labels, preds, pts
 
+## Running Pretrained Model
+
 ## Training CrossShapeNet
 
 ### Self-Shape Attention 
